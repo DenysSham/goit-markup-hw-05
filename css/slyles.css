@@ -113,25 +113,21 @@ ul {
    margin-left: auto;
    display: flex;
 }
-.contacts-list {
-   display: block;
-   padding-bottom: 32px;
-   padding-top: 32px;
+.contacts-list:nth-child(1) {
+   margin-right: 30px;
 }
 .header-contact {
    display: flex;
    align-items: center;
-   margin-right: 50px;
    font-style: normal;
    font-weight: 500;
    font-size: 14px;
    line-height: 1.14;
    letter-spacing: 0.02em;
+   padding: 32px 0;
    color: var(--secondary-text-color);
 }
-.header-contacts :not(:last-child) {
-   margin-right: 50px;
-}
+
 .header-contact:hover,
 .header-contact:focus {
    color: var(--current-color);
