@@ -54,10 +54,10 @@ ul {
 .nav {
    display: flex;
 }
-
-.site-nav > .nav-list {
-   padding: 32px 0;
+.nav-link {
+   display: inline-block;
 }
+
 .site-nav > .nav-list:not(:last-child) {
    margin-right: 50px;
 }
@@ -98,6 +98,14 @@ ul {
    letter-spacing: 0.02em;
    color: var(--primary-text-color);
 }
+.site-nav .nav-link {
+   padding: 32px 0;
+}
+.nav-link:focus,
+.nav-link:hover {
+   color: var(--current-color);
+}
+
 .current {
    color: var(--current-color);
 }
@@ -217,15 +225,22 @@ ul {
 .features-list {
    display: flex;
 }
-.features-svg {
+.features-icon-block {
+   display: flex;
+   justify-content: center;
+   align-items: center;
    width: 270px;
    height: 120px;
-   border: 1px solid transparent;
    border-radius: 4px;
    padding: 30px 100px;
    margin-bottom: 30px;
    background-color: var(--second-background);
 }
+.features-icon {
+   width: 70px;
+   height: 70px;
+}
+
 .features:not(:last-child),
 .whatwedo-list:not(:last-child),
 .worker:not(:last-child) {
@@ -260,6 +275,11 @@ ul {
 }
 .worker {
    display: block;
+   overflow: hidden;
+   background-color: var(--second-background);
+   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+   border-radius: 0px 0px 4px 4px;
 }
 .worker-foto {
    display: block;
@@ -302,7 +322,10 @@ ul {
    background-color: var(--white-colour);
    border-radius: 50%;
 }
-.social-svg {
+.social-list:not(:last-child) {
+   margin-right: 10px;
+}
+.social-icon {
    fill: var(--clients-picture-border);
 }
 .social-link:focus,
@@ -310,8 +333,8 @@ ul {
    background-color: var(--current-color);
 }
 
-.social-link:focus .social-svg,
-.social-link:hover .social-svg {
+.social-link:focus .social-icon,
+.social-link:hover .social-icon {
    fill: var(--white-colour);
    background-color: var(--current-color);
 }
@@ -406,6 +429,7 @@ ul {
 }
 .product-link {
    display: inline-block;
+   text-decoration: none;
 }
 .product-link:hover,
 .product-link:focus {
@@ -501,7 +525,7 @@ footer {
    background-color: #ffffff1a;
    border-radius: 50%;
 }
-.footer-social-svg {
+.footer-social-icon {
    fill: var(--white-colour);
 }
 .footer-social-link:focus,
@@ -509,11 +533,11 @@ footer {
    background-color: var(--current-color);
 }
 
-.footer-social-link:focus .footer-social-svg,
-.footer-social-link:hover .footer-social-svg {
+.footer-social-link:focus .footer-social-icon,
+.footer-social-link:hover .footer-social-icon {
    fill: var(--white-colour);
    background-color: var(--current-color);
 }
-.footer-social-link:not(:last-child) {
+.join:not(:last-child).footer-social {
    margin-right: 10px;
 }
