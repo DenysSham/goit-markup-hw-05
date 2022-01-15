@@ -73,7 +73,7 @@
                   Эффективные решения<br />
                   для вашего бизнеса
                </h1>
-               <button type="button" class="order-service">
+               <button type="button" class="order-service" data-modal-open>
                   Заказать услугу
                </button>
             </div>
@@ -141,26 +141,35 @@
                   <li class="whatwedo-list">
                      <img
                         src="./images/development.jpg"
-                        class="wwd-picture"
+                        class="whatwedo-picture"
                         alt="Десктопные приложения"
                         width="370"
                      />
+                     <div class="whatwedo-description">
+                        <p class="whatwedo-text">ДЕСКТОПНЫЕ ПРИЛОЖЕНИЯ</p>
+                     </div>
                   </li>
                   <li class="whatwedo-list">
                      <img
                         src="./images/adaptation.jpg"
-                        class="wwd-picture"
+                        class="whatwedo-picture"
                         alt="Мобильные приложения"
                         width="370"
                      />
+                     <div class="whatwedo-description">
+                        <p class="whatwedo-text">МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</p>
+                     </div>
                   </li>
                   <li class="whatwedo-list">
                      <img
                         src="./images/palette.jpg"
-                        class="wwd-picture"
+                        class="whatwedo-picture"
                         alt="Дизайнерские решения"
                         width="370"
                      />
+                     <div class="whatwedo-description">
+                        <p class="whatwedo-text">ДИЗАЙНЕРСКИЕ РЕШЕНИЯ</p>
+                     </div>
                   </li>
                </ul>
             </div>
@@ -570,7 +579,15 @@
             </div>
          </div>
       </footer>
-      div.backdrop>div.modal>button{}
+      <div data-modal class="backdrop is-hidden">
+         <div class="modal">
+            <button data-modal-close class="modal-close-button">
+               <svg class="modal-close-icon" width="11px" height="11px">
+                  <use href="./images/sprite.svg#close"></use>
+               </svg>
+            </button>
+         </div>
+      </div>
       <script src="./js/modal.js"></script>
    </body>
 </html>
