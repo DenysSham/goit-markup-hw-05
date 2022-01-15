@@ -77,7 +77,7 @@ ul {
 }
 .logo:hover,
 .logo:focus {
-   color: var(--current-color);
+   cursor: pointer;
 }
 .header-logo {
    font-family: Raleway;
@@ -88,7 +88,7 @@ ul {
 }
 .header-logo:hover,
 .header-logo:focus {
-   color: var(--primary-text-color);
+   cursor: pointer;
 }
 
 .nav-link {
@@ -98,6 +98,7 @@ ul {
    line-height: 1.14;
    letter-spacing: 0.02em;
    color: var(--primary-text-color);
+   transition: color 250ms var(--timing-function);
 }
 .site-nav .nav-link {
    display: block;
@@ -139,13 +140,20 @@ ul {
    letter-spacing: 0.02em;
    padding: 32px 0;
    color: var(--secondary-text-color);
+   transition: color 250ms var(--timing-function);
+
 }
 
 .header-contact:hover,
 .header-contact:focus {
    color: var(--current-color);
 }
-
+.svg-phone,
+.svg-mail {
+   margin-right: 10px;
+   fill: rgba(117, 117, 117, 1);
+   transition: fill 250ms var(--timing-function);
+}
 .header-contact:hover .svg-phone,
 .header-contact:focus .svg-phone,
 .header-contact:hover .svg-mail,
@@ -153,11 +161,7 @@ ul {
    fill: var(--current-color);
 }
 
-.svg-phone,
-.svg-mail {
-   margin-right: 10px;
-   fill: rgba(117, 117, 117, 1);
-}
+
 
 /* INDEX BODY Styles */
 .hero-section {
@@ -208,8 +212,7 @@ ul {
 }
 .order-service:focus,
 .order-service:hover {
-   background-color: var(--current-color);
-   color: var(--white-colour);
+   cursor: pointer;
 }
 .section {
    padding-bottom: 94px;
@@ -354,12 +357,14 @@ ul {
    height: 44px;
    background-color: var(--white-colour);
    border-radius: 50%;
+   transition: background-color 250ms var(--timing-function);
 }
 .social-list:not(:last-child) {
    margin-right: 10px;
 }
 .social-icon {
    fill: var(--clients-picture-border);
+   transition: fill 250ms var(--timing-function);
 }
 .social-link:focus,
 .social-link:hover {
@@ -386,18 +391,21 @@ ul {
    width: 170px;
    height: 92px;
    padding: 16px 32px;
-}
-.client:not(:last-child) {
-   margin-right: 30px;
-}
-.client-icon {
-   fill: var(--clients-picture-border);
+   transition: border 250ms var(--timing-function);
 }
 .clients-icons:focus,
 .clients-icons:hover {
    cursor: pointer;
    border: 1px solid var(--current-color);
 }
+.client:not(:last-child) {
+   margin-right: 30px;
+}
+.client-icon {
+   fill: var(--clients-picture-border);
+   transition: fill 250ms var(--timing-function);
+}
+
 .clients-icons:focus .client-icon,
 .clients-icons:hover .client-icon {
    fill: var(--current-color);
@@ -420,6 +428,9 @@ ul {
    text-align: center;
    letter-spacing: 0.03em;
    border: none;
+   transition: background-color 250ms var(--timing-function),
+   box-shadow 250ms var(--timing-function),
+   color 250ms var(--timing-function);
 }
 .filter-buttons:not(:last-child) {
    margin-right: 8px;
@@ -428,7 +439,6 @@ ul {
 .filter-button:hover {
    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
       0px 2px 2px rgba(0, 0, 0, 0.12);
-   border-radius: 4px;
    color: var(--white-colour);
    background-color: var(--current-color);
 }
@@ -450,7 +460,7 @@ ul {
    margin-bottom: 0px; 
 } */
 .products-inside {
-   display: block;
+   text-decoration: none;
    padding: 20px 24px;
    background-color: var(--white-colour);
    border-bottom: 1px solid var(--border);
@@ -458,7 +468,9 @@ ul {
    border-right: 1px solid var(--border);
 }
 .product-pic {
+   width: 100%;
    position: relative;
+   overflow: hidden;
 }
 .product-img {
    display: block;
@@ -466,6 +478,7 @@ ul {
 .product-link {
    display: inline-block;
    text-decoration: none;
+   transition: box-shadow 250ms var(--timing-function);
 }
 .product-link:hover,
 .product-link:focus {
@@ -476,13 +489,19 @@ ul {
 .product-description {
    position: absolute;
    bottom: 0;
+   transform: translateY(100%);
+   transition: transform 250ms var(--timing-function);
    width: 100%;
    height: 100%;
    padding: 63px 24px;
    background-color: rgba(33, 150, 243, 0.9);
 }
+.product:hover .product-description,
+.product:focus .product-description {
+   transform: translateY(0%);
+}
 .product-text {
-   font-family: Roboto;
+   font-family: Roboto, sans-serif;
    font-style: normal;
    font-weight: 400;
    font-size: 18px;
@@ -497,8 +516,10 @@ ul {
    font-size: 18px;
    line-height: 2;
    letter-spacing: 0.06em;
+   color: var(--primary-text-color);
 }
 .description {
+   text-decoration: none;
    font-style: normal;
    font-size: 16px;
    line-height: 1.875;
@@ -538,6 +559,7 @@ footer {
    line-height: 1.71;
    letter-spacing: 0.03em;
    color: var(--white-colour);
+   transition: color 250ms var(--timing-function);
 }
 .street:hover,
 .street:focus {
@@ -549,6 +571,7 @@ footer {
    line-height: 1.71;
    letter-spacing: 0.03em;
    color: var(--addres-colour);
+   transition: color 250ms var(--timing-function);
 }
 
 .foot-contacts:hover,
@@ -577,19 +600,20 @@ footer {
    height: 44px;
    background-color: #ffffff1a;
    border-radius: 50%;
-}
-.footer-social-icon {
-   fill: var(--white-colour);
+   transition: background-color 250ms var(--timing-function);
 }
 .footer-social-link:focus,
 .footer-social-link:hover {
    background-color: var(--current-color);
 }
 
+.footer-social-icon {
+   fill: var(--white-colour);
+   transition: fill 250ms var(--timing-function);
+}
 .footer-social-link:focus .footer-social-icon,
 .footer-social-link:hover .footer-social-icon {
    fill: var(--white-colour);
-   background-color: var(--current-color);
 }
 .join:not(:last-child).footer-social {
    margin-right: 10px;
@@ -601,10 +625,11 @@ footer {
    left: 0px;
    width: 100%;
    height: 100%;
-   transition: opacity 250ms var(--timing-function),
-      visibility 250ms var(--timing-function);
-   background-color: rgba(0, 0, 0, 0.2);
    opacity: 1;
+   transform: opacity;
+   transition: opacity 250ms var(--timing-function);
+   background-color: rgba(0, 0, 0, 0.2);
+   
 }
 .modal {
    position: absolute;
@@ -617,6 +642,7 @@ footer {
 }
 .backdrop.is-hidden {
    opacity: 0;
+   scale: 0.1;
    pointer-events: none;
 }
 .modal-close-button {
@@ -628,9 +654,11 @@ footer {
    border: solid 1px #000;
    border-radius: 50%;
    background-color: var(--white-colour);
+   transition: background-color 250ms var(--timing-function);
 }
 .modal-close-icon {
    fill: #000;
+   transition: fill 250ms var(--timing-function);
 }
 .modal-close-button:hover .modal-close-icon,
 .modal-close-button:focus .modal-close-icon {
@@ -640,4 +668,5 @@ footer {
 .modal-close-button:focus {
    background-color: var(--white-colour);
    border: solid 1px var(--current-color);
+   cursor: pointer;
 }
