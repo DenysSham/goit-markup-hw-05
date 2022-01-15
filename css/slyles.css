@@ -99,13 +99,25 @@ ul {
    color: var(--primary-text-color);
 }
 .site-nav .nav-link {
+   display: block;
    padding: 32px 0;
 }
 .nav-link:focus,
 .nav-link:hover {
    color: var(--current-color);
 }
-
+.nav-list {
+   position: relative;
+}
+.current::after {
+   content: '';
+   position: absolute;
+   transform: translateX(-100%);
+   bottom: 0px;
+   width: 100%;
+   border-bottom: solid 4px var(--current-color);
+   border-radius: 2px;
+}
 .current {
    color: var(--current-color);
 }
