@@ -635,15 +635,19 @@ footer {
    position: absolute;
    top: 50%;
    left: 50%;
-   transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%) scale(1);
    min-width: 520px;
    min-height: 580px;
    background-color: var(--white-colour);
+   transition: transform 250ms var(--timing-function);
 }
 .backdrop.is-hidden {
    opacity: 0;
    scale: 0.1;
    pointer-events: none;
+}
+.backdrop.is-hidden .modal{
+   transform: translate(-50%, -50%) scale(0.1);
 }
 .modal-close-button {
    position: absolute;
